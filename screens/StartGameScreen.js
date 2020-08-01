@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TextInput, Button, TouchableWithoutFeedback } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Button, TouchableWithoutFeedback, Keyboard } from 'react-native'
 
 import Colors from '../constants/colors'
 import Card from '../components/Card'
@@ -15,7 +15,9 @@ const StartGameScreen = props => {
     }
 
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => {
+            Keyboard.dismiss()
+        }}>
             <View style={styles.screen}>
                 <Text style={styles.title} >Start a New Game!</Text>
                 <Card style={styles.inputContainer} >
@@ -24,9 +26,9 @@ const StartGameScreen = props => {
                     <Input 
                         style={styles.input} 
                         blurOnSubmit 
-                        AutoCapitalize='none' 
+                        autoCapitalize='none' 
                         autoCorrect={false} 
-                        keyboardType="number-pad" 
+                        keyboardType="numeric" 
                         maxLength={2}
                         onChangeText={numberInputHandler}
                         value={enteredValue}
