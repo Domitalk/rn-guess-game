@@ -31,6 +31,11 @@ const StartGameScreen = props => {
         setSelectedNumber(chosenNumber)
     }
 
+    let confirmedOutput; 
+    if (confirmed) {
+        confirmedOutput = <Text>Chosen Number: {selectedNumber} </Text>
+    }
+
     return (
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss()
@@ -67,6 +72,7 @@ const StartGameScreen = props => {
                         </View>
                     </View>
                 </Card>
+                {confirmedOutput}
             </View>
         </TouchableWithoutFeedback>
     )
