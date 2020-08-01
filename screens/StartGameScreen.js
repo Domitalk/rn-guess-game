@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: 50,
+        textAlign: 'center'
     }
 });
 
