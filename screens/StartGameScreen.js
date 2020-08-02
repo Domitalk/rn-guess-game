@@ -44,7 +44,8 @@ const StartGameScreen = props => {
         }
         setConfirmed(true);
         setEnteredValue('');
-        setSelectedNumber(chosenNumber)
+        setSelectedNumber(chosenNumber);
+        Keyboard.dismiss();
     }
 
     let confirmedOutput; 
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     },
     summaryContainer: {
         marginTop: 20,
+        alignItems: 'center'
     }
 });
 
