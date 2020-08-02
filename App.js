@@ -16,12 +16,12 @@ export default function App() {
   let content = <StartGameScreen onStartGame={startGameHandler} />;
 
   if (userNumber) {
-    content = <GameScreen />
+    content = <GameScreen userChoice={userNumber} />
   }
 
   return (
     <View style={styles.screen}>
-        <Header title="Guess a Number" userChoice={userNumber}/>
+        <Header title="Guess a Number" />
         {content}
     </View>
   );
